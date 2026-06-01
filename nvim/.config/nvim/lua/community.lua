@@ -10,7 +10,6 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.markdown" },
-  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
   -- { import = "astrocommunity.code-runner.molten-nvim" }, -- Disabled in favor of jupynium
   -- import/override with your plugins folder
 }

@@ -10,12 +10,16 @@ return {
         n = {
           ["gb"] = { ":bnext<CR>", desc = "Next buffer" },
           ["gB"] = { ":bprevious<CR>", desc = "Previous buffer" },
-          ["<Leader>mp"] = { ":MarkdownPreview<CR>", desc = "Markdown preview" },
-          ["<Leader>ms"] = { ":MarkdownPreviewStop<CR>", desc = "Markdown preview stop" },
-          ["<Leader>mt"] = { ":MarkdownPreviewToggle<CR>", desc = "Markdown preview toggle" },
+          ["<Leader>mt"] = { ":RenderMarkdown toggle<CR>", desc = "Render markdown toggle" },
         },
       },
     },
+  },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    ft = { "markdown", "quarto", "asciidoc" },
+    opts = {},
   },
   {
     "kylechui/nvim-surround",
