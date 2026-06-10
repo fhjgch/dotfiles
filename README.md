@@ -77,6 +77,13 @@ Stow whichever packages you want:
 cd ~/dotfiles
 stow nvim
 stow zsh       # if you have it
+stow tmux      # if you have it
+```
+
+Install tmux plugins — first clone TPM, then open tmux and press `prefix + I` to install the rest:
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 ```
 
 Launch nvim — lazy.nvim bootstraps automatically:
