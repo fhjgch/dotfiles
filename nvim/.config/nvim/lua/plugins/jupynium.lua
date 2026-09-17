@@ -73,8 +73,19 @@ return {
   config = function()
     require("jupynium").setup({
       python_host = vim.g.python3_host_prog or "python3",
-      default_notebook_URL = "localhost:8888/nbclassic",
-      jupyter_command = "jupyter notebook",
+      -- Needs an explicit scheme: current Firefox/geckodriver rejects
+      -- schemeless "localhost:8888/..." navigation with
+      -- "Navigation to ... is not allowed in this context".
+      default_notebook_URL = "http://localhost:8888/nbclassic",
+      jupyter_command = "jupyter", -- jupynium appends "notebook" itself
+
+      -- Firefox is installed as a snap on this machine, so its profile lives
+      -- under ~/snap/firefox/common/.mozilla, not the usual ~/.mozilla
+      -- (which is stale/inaccessible to the sandboxed snap firefox and
+      -- causes a "No profile found" error).
+      firefox_profiles_ini_path = "~/snap/firefox/common/.mozilla/firefox/profiles.ini",
+      -- Use a dedicated profile instead of the personal browsing profile.
+      firefox_profile_name = "jupynium",
 
       -- Jupynium options
       use_default_keybindings = false, -- Using custom keybindings via AstroCore
